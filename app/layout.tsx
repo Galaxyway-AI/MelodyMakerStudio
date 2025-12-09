@@ -48,7 +48,7 @@ export default async function RootLayout({
   const animationSettings = await getAnimationSettings();
 
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <body className={`font-sans antialiased bg-transparent text-foreground`}>
         <AuthProvider>
           <PlayerProvider>

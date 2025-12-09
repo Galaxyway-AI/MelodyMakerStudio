@@ -3,15 +3,16 @@
 import { revalidatePath } from "next/cache";
 import { Song } from "@/lib/db/firestore-schema";
 import { updateSong as updateSongInFirestore } from "@/lib/db/firestore-queries";
-import { getServerUser } from "@/lib/auth-helpers";
+import { requireAdmin } from "@/lib/auth-helpers";
 
 export async function editSong(
   songId: string,
   data: Partial<Omit<Song, "id" | "createdAt" | "updatedAt">>
 ) {
-  const user = await getServerUser();
-  if (!user || user.email !== "melodymakercontact@gmail.com") {
-    return { error: "Unauthorized: You do not have permission to perform this action." };
+  try {
+    await requireAdmin();
+  } catch (error) {
+    return { error: (error as Error).message };
   }
 
   try {

@@ -1,13 +1,14 @@
 "use server";
 
 import { adminStorage } from "@/lib/firebase-admin";
-import { getServerUser } from "@/lib/auth-helpers";
+import { requireAdmin } from "@/lib/auth-helpers";
 import { v4 as uuidv4 } from "uuid";
 
 export async function uploadFile(formData: FormData) {
-    const user = await getServerUser();
-    if (!user) {
-        return { error: "Unauthorized" };
+    try {
+        await requireAdmin();
+    } catch (error) {
+        return { error: (error as Error).message };
     }
 
     const file = formData.get("file") as File;

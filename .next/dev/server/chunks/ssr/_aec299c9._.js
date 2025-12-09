@@ -4,13 +4,15 @@ module.exports = [
 
 return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 
-/* __next_internal_action_entry_do_not_use__ [{"00566643d59a836228ad85f2a426b33aac7e09f480":"requireAuth","0065238a8b319d83a2352a755daedcc6afdf1effd8":"deleteSessionCookie","00b2b9e38df60abf5844c7d08f850bf6134bc95b91":"getServerUser","4000e0db2193efc549569f9bbfb130dc6faa82429f":"verifyIdToken","40c67ba5d73e45c700db02d4b7fbf4038110ac1ced":"createSessionCookie"},"",""] */ __turbopack_context__.s([
+/* __next_internal_action_entry_do_not_use__ [{"00566643d59a836228ad85f2a426b33aac7e09f480":"requireAuth","0065238a8b319d83a2352a755daedcc6afdf1effd8":"deleteSessionCookie","00b2b9e38df60abf5844c7d08f850bf6134bc95b91":"getServerUser","00b6de91d4959c5afe6f10398d4d8abe82caaa19fe":"requireAdmin","4000e0db2193efc549569f9bbfb130dc6faa82429f":"verifyIdToken","40c67ba5d73e45c700db02d4b7fbf4038110ac1ced":"createSessionCookie"},"",""] */ __turbopack_context__.s([
     "createSessionCookie",
     ()=>createSessionCookie,
     "deleteSessionCookie",
     ()=>deleteSessionCookie,
     "getServerUser",
     ()=>getServerUser,
+    "requireAdmin",
+    ()=>requireAdmin,
     "requireAuth",
     ()=>requireAuth,
     "verifyIdToken",
@@ -43,6 +45,13 @@ async function requireAuth() {
     const user = await getServerUser();
     if (!user) {
         throw new Error("Unauthorized - Please sign in");
+    }
+    return user;
+}
+async function requireAdmin() {
+    const user = await getServerUser();
+    if (!user || user.email !== "melodymakercontact@gmail.com") {
+        throw new Error("Unauthorized - Admin access required");
     }
     return user;
 }
@@ -88,12 +97,14 @@ async function verifyIdToken(idToken) {
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ensureServerEntryExports"])([
     getServerUser,
     requireAuth,
+    requireAdmin,
     createSessionCookie,
     deleteSessionCookie,
     verifyIdToken
 ]);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getServerUser, "00b2b9e38df60abf5844c7d08f850bf6134bc95b91", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(requireAuth, "00566643d59a836228ad85f2a426b33aac7e09f480", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(requireAdmin, "00b6de91d4959c5afe6f10398d4d8abe82caaa19fe", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createSessionCookie, "40c67ba5d73e45c700db02d4b7fbf4038110ac1ced", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteSessionCookie, "0065238a8b319d83a2352a755daedcc6afdf1effd8", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(verifyIdToken, "4000e0db2193efc549569f9bbfb130dc6faa82429f", null);

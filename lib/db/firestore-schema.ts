@@ -45,6 +45,7 @@ export interface SongRequest {
     mustIncludes?: string[];
     referralSource?: string;
     extraAddons?: string;
+    expressService?: string;
     videos?: string[]; // YouTube video IDs
 
     createdAt: Date;
@@ -68,6 +69,24 @@ export interface BlogPost {
     updatedAt: Date;
 }
 
+
+
+// Artist document in 'artists' collection
+export interface Artist {
+    id: string;
+    name: string;
+    slug: string;
+    bio?: string;
+    image?: string;
+    youtube?: string;
+    instagram?: string;
+    twitter?: string;
+    spotify?: string;
+    color?: string;
+
+    createdAt: Date;
+    updatedAt: Date;
+}
 
 // Convert Firestore Timestamp to Date
 export function timestampToDate(timestamp: any): Date {

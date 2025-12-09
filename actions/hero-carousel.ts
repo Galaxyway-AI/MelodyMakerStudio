@@ -8,9 +8,11 @@ import {
 } from "@/lib/db/firestore-queries";
 import { revalidatePath } from "next/cache";
 import { HeroSlide } from "@/lib/db/firestore-schema";
+import { requireAdmin } from "@/lib/auth-helpers";
 
 export async function createHeroSlideAction(data: Omit<HeroSlide, "id" | "createdAt" | "updatedAt">) {
     try {
+        await requireAdmin();
         await createHeroSlide(data);
         revalidatePath("/admin/hero-carousel");
         revalidatePath("/"); // Update homepage
@@ -23,6 +25,7 @@ export async function createHeroSlideAction(data: Omit<HeroSlide, "id" | "create
 
 export async function updateHeroSlideAction(id: string, data: Partial<Omit<HeroSlide, "id">>) {
     try {
+        await requireAdmin();
         await updateHeroSlide(id, data);
         revalidatePath("/admin/hero-carousel");
         revalidatePath("/"); // Update homepage
@@ -35,6 +38,7 @@ export async function updateHeroSlideAction(id: string, data: Partial<Omit<HeroS
 
 export async function deleteHeroSlideAction(id: string) {
     try {
+        await requireAdmin();
         await deleteHeroSlide(id);
         revalidatePath("/admin/hero-carousel");
         revalidatePath("/"); // Update homepage
@@ -47,6 +51,7 @@ export async function deleteHeroSlideAction(id: string) {
 
 export async function reorderHeroSlidesAction(slides: { id: string; order: number }[]) {
     try {
+        await requireAdmin();
         await reorderHeroSlides(slides);
         revalidatePath("/admin/hero-carousel");
         revalidatePath("/"); // Update homepage

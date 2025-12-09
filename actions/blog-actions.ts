@@ -3,8 +3,10 @@
 import { createBlogPost, updateBlogPost, deleteBlogPost } from "@/lib/db/firestore-queries";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth-helpers";
 
 export async function createBlogPostAction(formData: FormData) {
+    await requireAdmin();
     const title = formData.get("title") as string;
     const content = formData.get("content") as string;
     const excerpt = formData.get("excerpt") as string;
@@ -24,12 +26,13 @@ export async function createBlogPostAction(formData: FormData) {
         published,
     });
 
-    revalidatePath("/admin-dashboard/blog");
+    revalidatePath("/admin/blog");
     revalidatePath("/blog");
-    redirect("/admin-dashboard/blog");
+    redirect("/admin/blog");
 }
 
 export async function updateBlogPostAction(id: string, formData: FormData) {
+    await requireAdmin();
     const title = formData.get("title") as string;
     const content = formData.get("content") as string;
     const excerpt = formData.get("excerpt") as string;
@@ -49,13 +52,14 @@ export async function updateBlogPostAction(id: string, formData: FormData) {
         published,
     });
 
-    revalidatePath("/admin-dashboard/blog");
+    revalidatePath("/admin/blog");
     revalidatePath("/blog");
-    redirect("/admin-dashboard/blog");
+    redirect("/admin/blog");
 }
 
 export async function deleteBlogPostAction(id: string) {
+    await requireAdmin();
     await deleteBlogPost(id);
-    revalidatePath("/admin-dashboard/blog");
+    revalidatePath("/admin/blog");
     revalidatePath("/blog");
 }

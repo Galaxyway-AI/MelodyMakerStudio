@@ -17,7 +17,7 @@ export async function middleware(request: NextRequest) {
   const session = request.cookies.get("session");
 
   // Protected routes pattern
-  const protectedRoutes = ["/dashboard", "/admin-dashboard", "/create", "/settings"];
+  const protectedRoutes = ["/dashboard", "/admin", "/admin-dashboard", "/create", "/settings"];
   const isProtectedRoute = protectedRoutes.some((route) =>
     request.nextUrl.pathname.startsWith(route)
   );
@@ -33,7 +33,7 @@ export async function middleware(request: NextRequest) {
   }
 
   if (isAuthRoute && session) {
-    return NextResponse.redirect(new URL("/admin-dashboard", request.url));
+    return NextResponse.redirect(new URL("/admin", request.url));
   }
 
   return NextResponse.next();

@@ -3,8 +3,10 @@
 import { createArtist, updateArtist, deleteArtist } from "@/lib/db/firestore-queries";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { requireAdmin } from "@/lib/auth-helpers";
 
 export async function createArtistAction(formData: FormData) {
+    await requireAdmin();
     const name = formData.get("name") as string;
     const bio = formData.get("bio") as string;
     const image = formData.get("image") as string;
@@ -29,12 +31,13 @@ export async function createArtistAction(formData: FormData) {
         color,
     });
 
-    revalidatePath("/admin-dashboard/artists");
+    revalidatePath("/admin/artists");
     revalidatePath("/artists");
-    redirect("/admin-dashboard/artists");
+    redirect("/admin/artists");
 }
 
 export async function updateArtistAction(id: string, formData: FormData) {
+    await requireAdmin();
     const name = formData.get("name") as string;
     const bio = formData.get("bio") as string;
     const image = formData.get("image") as string;
@@ -58,13 +61,14 @@ export async function updateArtistAction(id: string, formData: FormData) {
         color,
     });
 
-    revalidatePath("/admin-dashboard/artists");
+    revalidatePath("/admin/artists");
     revalidatePath("/artists");
-    redirect("/admin-dashboard/artists");
+    redirect("/admin/artists");
 }
 
 export async function deleteArtistAction(id: string) {
+    await requireAdmin();
     await deleteArtist(id);
-    revalidatePath("/admin-dashboard/artists");
+    revalidatePath("/admin/artists");
     revalidatePath("/artists");
 }

@@ -48,7 +48,7 @@ export async function createRequestedSong({
     });
 
     console.log("SONG REQUEST END - Saved to Firestore:", result.id);
-    revalidatePath("/admin-dashboard/requested-songs");
+    revalidatePath("/admin/requested-songs");
 
     return { data: { resId: result.id }, error: null };
   } catch (error) {

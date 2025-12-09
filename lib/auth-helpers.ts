@@ -37,6 +37,17 @@ export async function requireAuth() {
 }
 
 /**
+ * Require admin authentication - throws error if not authenticated or not admin
+ */
+export async function requireAdmin() {
+    const user = await getServerUser();
+    if (!user || user.email !== "melodymakercontact@gmail.com") {
+        throw new Error("Unauthorized - Admin access required");
+    }
+    return user;
+}
+
+/**
  * Create session cookie from Firebase ID token
  * Call this from a server action after successful login
  */

@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 
 import { adminDb, adminStorage } from "@/lib/firebase-admin";
-import { getServerUser } from "@/lib/auth-helpers";
+import { requireAdmin } from "@/lib/auth-helpers";
 
 export async function deleteSong({
   id,
@@ -18,9 +18,10 @@ export async function deleteSong({
   artistImage?: string;
   albumImage?: string;
 }) {
-  const user = await getServerUser();
-  if (!user || user.email !== "melodymakercontact@gmail.com") {
-    return { data: null, error: "Unauthorized: You do not have permission to perform this action." };
+  try {
+    await requireAdmin();
+  } catch (error) {
+    return { data: null, error: (error as Error).message };
   }
 
   console.log("DELETE SONG STARTED");

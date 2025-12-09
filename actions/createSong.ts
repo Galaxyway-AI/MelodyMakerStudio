@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 import type { Song } from "@/lib/db/firestore-schema";
 import { createSong as createSongInFirestore } from "@/lib/db/firestore-queries";
 
-import { getServerUser } from "@/lib/auth-helpers";
+import { requireAdmin } from "@/lib/auth-helpers";
 
 export async function createSong({
   songName,
@@ -20,9 +20,10 @@ export async function createSong({
   vocal,
   status = "draft",
 }: Omit<Song, "id" | "createdAt" | "updatedAt">) {
-  const user = await getServerUser();
-  if (!user || user.email !== "melodymakercontact@gmail.com") {
-    return { data: null, error: "Unauthorized: You do not have permission to perform this action." };
+  try {
+    await requireAdmin();
+  } catch (error) {
+    return { data: null, error: (error as Error).message };
   }
   console.log("CREATE SONG STARTED");
   console.log({
