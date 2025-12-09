@@ -1,0 +1,66 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Helper function to check authentication
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check file size (max 100MB for audio, 10MB for images)
+    function validFileSize(maxSizeMB) {
+      return request.resource.size < maxSizeMB * 1024 * 1024;
+    }
+    
+    // Audio files - organized by user ID
+    match /audio/{userId}/{fileName} {
+      // Anyone authenticated can read audio files
+      allow read: if isAuthenticated();
+      
+      // Only the owner can upload audio files
+      // Max size: 100MB
+      allow write: if isAuthenticated() 
+                   && request.auth.uid == userId 
+                   && validFileSize(100);
+      
+      // Only the owner can delete their audio files
+      allow delete: if isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Image files - organized by user ID
+    match /image/{userId}/{fileName} {
+      // Anyone authenticated can read images
+      allow read: if isAuthenticated();
+      
+      // Only the owner can upload images
+      // Max size: 10MB
+      allow write: if isAuthenticated() 
+                   && request.auth.uid == userId 
+                   && validFileSize(10);
+      
+      // Only the owner can delete their images
+      allow delete: if isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Artist images
+    match /artists/{userId}/{fileName} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && request.auth.uid == userId && validFileSize(10);
+      allow delete: if isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Blog images
+    match /blog/{userId}/{fileName} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && request.auth.uid == userId && validFileSize(10);
+      allow delete: if isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // General library files (for Admin File Manager)
+    match /library/{fileName} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && validFileSize(50);
+      allow delete: if isAuthenticated();
+    }
+  }
+}

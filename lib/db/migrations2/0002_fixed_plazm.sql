@@ -1,0 +1,1 @@
+ALTER TABLE "songs" ALTER COLUMN "duration" SET DATA TYPE numeric(100, 20);

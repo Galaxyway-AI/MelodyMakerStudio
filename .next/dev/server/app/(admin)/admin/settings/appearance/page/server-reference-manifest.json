@@ -1,0 +1,65 @@
+{
+  "node": {
+    "0063bec02b5df4b152a110d8d61ea59b301417663d": {
+      "workers": {
+        "app/(admin)/admin/settings/appearance/page": {
+          "moduleId": "[project]/.next-internal/server/app/(admin)/admin/settings/appearance/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/site-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/auth-helpers.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getAnimationSettings",
+          "filename": "lib/actions/site-settings.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/admin/settings/appearance/page": "rsc"
+      },
+      "exportedName": "getAnimationSettings",
+      "filename": "lib/actions/site-settings.ts"
+    },
+    "40f0016898957ca43421db90fea196eeb40582da93": {
+      "workers": {
+        "app/(admin)/admin/settings/appearance/page": {
+          "moduleId": "[project]/.next-internal/server/app/(admin)/admin/settings/appearance/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/site-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/auth-helpers.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateAnimationSettings",
+          "filename": "lib/actions/site-settings.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/admin/settings/appearance/page": "action-browser"
+      },
+      "exportedName": "updateAnimationSettings",
+      "filename": "lib/actions/site-settings.ts"
+    },
+    "40c67ba5d73e45c700db02d4b7fbf4038110ac1ced": {
+      "workers": {
+        "app/(admin)/admin/settings/appearance/page": {
+          "moduleId": "[project]/.next-internal/server/app/(admin)/admin/settings/appearance/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/site-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/auth-helpers.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createSessionCookie",
+          "filename": "lib/auth-helpers.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/admin/settings/appearance/page": "action-browser"
+      },
+      "exportedName": "createSessionCookie",
+      "filename": "lib/auth-helpers.ts"
+    },
+    "0065238a8b319d83a2352a755daedcc6afdf1effd8": {
+      "workers": {
+        "app/(admin)/admin/settings/appearance/page": {
+          "moduleId": "[project]/.next-internal/server/app/(admin)/admin/settings/appearance/page/actions.js { ACTIONS_MODULE0 => \"[project]/lib/actions/site-settings.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/lib/auth-helpers.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "deleteSessionCookie",
+          "filename": "lib/auth-helpers.ts"
+        }
+      },
+      "layer": {
+        "app/(admin)/admin/settings/appearance/page": "action-browser"
+      },
+      "exportedName": "deleteSessionCookie",
+      "filename": "lib/auth-helpers.ts"
+    }
+  },
+  "edge": {}
+}

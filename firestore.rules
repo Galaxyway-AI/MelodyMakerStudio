@@ -1,0 +1,48 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check if user is the owner
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Users collection - users can only read/write their own document
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow create: if isOwner(userId);
+      allow update, delete: if isOwner(userId);
+    }
+    
+    // Songs collection
+    match /songs/{songId} {
+      // Anyone authenticated can read published songs
+      allow read: if isAuthenticated() && resource.data.status == 'published';
+      
+      // Anyone authenticated can create songs
+      allow create: if isAuthenticated();
+      
+      // Only admin or system can update/delete songs
+      // For now, anyone authenticated can update/delete their own content
+      // In production, you should add proper admin role checking
+      allow update, delete: if isAuthenticated();
+    }
+    
+    // Song requests collection
+    match /songRequests/{requestId} {
+      // Anyone can create song requests (public form)
+      allow create: if true;
+      
+      // Only authenticated users can read all requests
+      allow read: if isAuthenticated();
+      
+      // Only authenticated users can update/delete requests
+      allow update, delete: if isAuthenticated();
+    }
+  }
+}

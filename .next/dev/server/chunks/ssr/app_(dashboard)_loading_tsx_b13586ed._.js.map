@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///X:/Apps/MelodyMakerStudio/app/%28dashboard%29/loading.tsx"],"sourcesContent":["const Loading = () => {\n  return (\n    <div className=\"flex-1 space-y-4  p-4 mb-20 pt-6 md:p-8\">\n      <p>Loading...</p>\n    </div>\n  );\n};\n\nexport default Loading;\n"],"names":[],"mappings":";;;;;;AAAA,MAAM,UAAU;IACd,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC;sBAAE;;;;;;;;;;;AAGT;uCAEe"}}]
+}
