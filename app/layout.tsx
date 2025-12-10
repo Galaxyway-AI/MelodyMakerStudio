@@ -15,23 +15,7 @@ export const metadata: Metadata = {
   description:
     "Experience ultra-modern music production with AI features, artist collaboration, and futuristic sound design. Elevate your music with MelodyMaker Studio.",
   generator: "v0.app",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
+
 }
 
 import { AuthProvider } from "@/contexts/auth-context"
