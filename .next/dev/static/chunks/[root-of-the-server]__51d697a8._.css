@@ -313,9 +313,9 @@
 
   @supports (color: lab(0% 0 0)) {
     :root, :host {
-      --color-red-50: lab(96.5005% 4.18511 1.52329);
-      --color-red-300: lab(76.5514% 36.4219 15.5335);
-      --color-red-400: lab(63.7053% 60.7449 31.3109);
+      --color-red-50: lab(96.5005% 4.18508 1.52328);
+      --color-red-300: lab(76.5514% 36.422 15.5335);
+      --color-red-400: lab(63.7053% 60.745 31.3109);
       --color-red-500: lab(55.4814% 75.0732 48.8528);
       --color-red-600: lab(48.4493% 77.4328 61.5452);
       --color-red-800: lab(33.7174% 55.8993 41.0293);
@@ -324,25 +324,25 @@
       --color-amber-600: lab(60.3514% 40.5624 87.1228);
       --color-yellow-400: lab(83.2664% 8.65132 106.895);
       --color-yellow-500: lab(76.3898% 14.5258 98.4589);
-      --color-yellow-600: lab(62.7799% 22.4198 86.1544);
+      --color-yellow-600: lab(62.7799% 22.4197 86.1544);
       --color-green-300: lab(86.9953% -47.2691 25.0054);
       --color-green-400: lab(78.503% -64.9265 39.7492);
-      --color-green-500: lab(70.5521% -66.5147 45.8072);
+      --color-green-500: lab(70.5521% -66.5147 45.8073);
       --color-green-600: lab(59.0978% -58.6621 41.2579);
       --color-emerald-500: lab(66.9756% -58.27 19.5419);
       --color-emerald-600: lab(55.0481% -49.9246 15.93);
       --color-teal-500: lab(67.3859% -49.0983 -2.63511);
       --color-cyan-400: lab(76.6045% -40.9406 -29.6231);
       --color-cyan-500: lab(67.805% -35.3952 -30.2018);
-      --color-cyan-600: lab(55.1767% -26.7496 -30.5138);
+      --color-cyan-600: lab(55.1767% -26.7496 -30.5139);
       --color-blue-200: lab(86.15% -4.04379 -21.0797);
       --color-blue-300: lab(77.5052% -6.4629 -36.42);
-      --color-blue-400: lab(65.0361% -1.42062 -56.9803);
-      --color-blue-500: lab(54.1736% 13.3368 -74.6839);
+      --color-blue-400: lab(65.0361% -1.42065 -56.9802);
+      --color-blue-500: lab(54.1736% 13.3369 -74.6839);
       --color-blue-600: lab(44.0605% 29.0279 -86.0352);
       --color-indigo-500: lab(48.295% 38.3129 -81.9673);
       --color-indigo-600: lab(38.4009% 52.6132 -92.3857);
-      --color-violet-500: lab(49.9355% 55.1777 -81.8963);
+      --color-violet-500: lab(49.9355% 55.1776 -81.8963);
       --color-purple-200: lab(87.8405% 13.4282 -18.7159);
       --color-purple-300: lab(78.3298% 26.2195 -34.9499);
       --color-purple-400: lab(63.6946% 47.6127 -59.2066);
@@ -353,31 +353,31 @@
       --color-fuchsia-500: lab(56.4256% 83.132 -64.639);
       --color-pink-400: lab(64.5597% 64.3615 -12.7988);
       --color-pink-500: lab(56.9303% 76.8162 -8.07021);
-      --color-pink-600: lab(49.5493% 79.8381 2.31769);
+      --color-pink-600: lab(49.5493% 79.8381 2.31768);
       --color-pink-700: lab(42.1737% 71.8009 7.42233);
-      --color-rose-500: lab(56.101% 79.4329 31.4532);
-      --color-slate-50: lab(98.1434% -.369549 -1.05968);
+      --color-rose-500: lab(56.101% 79.4328 31.4532);
+      --color-slate-50: lab(98.1434% -.369519 -1.05966);
       --color-slate-400: lab(65.5349% -2.25151 -14.5072);
-      --color-slate-700: lab(26.9569% -1.47018 -15.6993);
-      --color-slate-800: lab(16.132% -.318021 -14.6672);
-      --color-gray-100: lab(96.1596% -.082314 -1.13575);
-      --color-gray-200: lab(91.6229% -.159085 -2.26791);
+      --color-slate-700: lab(26.9569% -1.47016 -15.6993);
+      --color-slate-800: lab(16.132% -.318035 -14.6672);
+      --color-gray-100: lab(96.1596% -.0823438 -1.13575);
+      --color-gray-200: lab(91.6229% -.159115 -2.26791);
       --color-gray-300: lab(85.1236% -.612259 -3.7138);
-      --color-gray-400: lab(65.9269% -.832707 -8.17474);
-      --color-gray-500: lab(47.7841% -.393212 -10.0268);
-      --color-zinc-100: lab(96.1634% .0993013 -.364029);
-      --color-zinc-400: lab(65.6464% 1.53494 -5.42429);
-      --color-zinc-600: lab(35.1166% 1.7821 -6.1173);
-      --color-zinc-800: lab(15.7305% .613749 -2.16959);
-      --color-zinc-900: lab(8.30603% .618212 -2.16573);
+      --color-gray-400: lab(65.9269% -.832707 -8.17473);
+      --color-gray-500: lab(47.7841% -.393182 -10.0268);
+      --color-zinc-100: lab(96.1634% .0993311 -.364041);
+      --color-zinc-400: lab(65.6464% 1.53497 -5.42429);
+      --color-zinc-600: lab(35.1166% 1.78212 -6.1173);
+      --color-zinc-800: lab(15.7305% .613764 -2.16959);
+      --color-zinc-900: lab(8.30603% .618205 -2.16572);
       --color-neutral-50: lab(98.26% 0 0);
-      --color-neutral-200: lab(90.952% -.0000596046 0);
-      --color-neutral-300: lab(84.92% 0 0);
+      --color-neutral-200: lab(90.952% 0 -.0000119209);
+      --color-neutral-300: lab(84.92% 0 -.0000119209);
       --color-neutral-400: lab(66.128% -.0000298023 .0000119209);
       --color-neutral-500: lab(48.496% 0 0);
       --color-neutral-600: lab(34.924% 0 0);
       --color-neutral-700: lab(27.036% 0 0);
-      --color-neutral-800: lab(15.204% 0 0);
+      --color-neutral-800: lab(15.204% 0 -.00000596046);
       --color-neutral-900: lab(7.78201% -.0000149012 0);
       --color-neutral-950: lab(2.75381% 0 0);
     }
@@ -1428,27 +1428,27 @@
       --tw-prose-lead: lab(35.6337% -1.58697 -10.8425);
       --tw-prose-links: lab(8.11897% .811279 -12.254);
       --tw-prose-bold: lab(8.11897% .811279 -12.254);
-      --tw-prose-counters: lab(47.7841% -.393212 -10.0268);
+      --tw-prose-counters: lab(47.7841% -.393182 -10.0268);
       --tw-prose-bullets: lab(85.1236% -.612259 -3.7138);
-      --tw-prose-hr: lab(91.6229% -.159085 -2.26791);
+      --tw-prose-hr: lab(91.6229% -.159115 -2.26791);
       --tw-prose-quotes: lab(8.11897% .811279 -12.254);
-      --tw-prose-quote-borders: lab(91.6229% -.159085 -2.26791);
-      --tw-prose-captions: lab(47.7841% -.393212 -10.0268);
+      --tw-prose-quote-borders: lab(91.6229% -.159115 -2.26791);
+      --tw-prose-captions: lab(47.7841% -.393182 -10.0268);
       --tw-prose-kbd: lab(8.11897% .811279 -12.254);
       --tw-prose-kbd-shadows: lab(8.11897% .811279 -12.254 / .1);
       --tw-prose-code: lab(8.11897% .811279 -12.254);
-      --tw-prose-pre-code: lab(91.6229% -.159085 -2.26791);
+      --tw-prose-pre-code: lab(91.6229% -.159115 -2.26791);
       --tw-prose-pre-bg: lab(16.1051% -1.18239 -11.7533);
       --tw-prose-th-borders: lab(85.1236% -.612259 -3.7138);
-      --tw-prose-td-borders: lab(91.6229% -.159085 -2.26791);
+      --tw-prose-td-borders: lab(91.6229% -.159115 -2.26791);
       --tw-prose-invert-body: lab(85.1236% -.612259 -3.7138);
-      --tw-prose-invert-lead: lab(65.9269% -.832707 -8.17474);
-      --tw-prose-invert-counters: lab(65.9269% -.832707 -8.17474);
+      --tw-prose-invert-lead: lab(65.9269% -.832707 -8.17473);
+      --tw-prose-invert-counters: lab(65.9269% -.832707 -8.17473);
       --tw-prose-invert-bullets: lab(35.6337% -1.58697 -10.8425);
       --tw-prose-invert-hr: lab(27.1134% -.956401 -12.3224);
-      --tw-prose-invert-quotes: lab(96.1596% -.082314 -1.13575);
+      --tw-prose-invert-quotes: lab(96.1596% -.0823438 -1.13575);
       --tw-prose-invert-quote-borders: lab(27.1134% -.956401 -12.3224);
-      --tw-prose-invert-captions: lab(65.9269% -.832707 -8.17474);
+      --tw-prose-invert-captions: lab(65.9269% -.832707 -8.17473);
       --tw-prose-invert-pre-code: lab(85.1236% -.612259 -3.7138);
       --tw-prose-invert-th-borders: lab(35.6337% -1.58697 -10.8425);
       --tw-prose-invert-td-borders: lab(27.1134% -.956401 -12.3224);
@@ -3395,7 +3395,7 @@
 
   .bg-\[\#130b2b\]\/95 {
     background-color: #130b2bf2;
-    background-color: lab(4.79868% 9.94207 -19.6765 / .95);
+    background-color: lab(4.79869% 9.94205 -19.6765 / .95);
   }
 
   .bg-accent {
@@ -8879,7 +8879,7 @@
     --popover-foreground: lab(97.68% -.0000298023 .0000119209);
     --primary: lab(49.2561% 53.4875 -83.3985);
     --primary-foreground: lab(97.68% -.0000298023 .0000119209);
-    --secondary: lab(49.8232% -66.8066 -27.3152);
+    --secondary: lab(49.8232% -66.8067 -27.3152);
     --secondary-foreground: lab(97.68% -.0000298023 .0000119209);
     --muted: lab(7.22637% -.0000149012 0);
     --muted-foreground: lab(53.6% 0 0);
@@ -8892,7 +8892,7 @@
     --ring: lab(49.2561% 53.4875 -83.3985);
     --chart-1: lab(49.2561% 53.4875 -83.3985);
     --chart-2: lab(62.2132% -87.0802 -16.2428);
-    --chart-3: lab(49.8232% -66.8066 -27.3152);
+    --chart-3: lab(49.8232% -66.8067 -27.3152);
     --chart-4: lab(49.2561% 53.4875 -83.3985);
     --chart-5: lab(62.2132% -87.0802 -16.2428);
     --sidebar: lab(.903296% 0 0);
@@ -8951,7 +8951,7 @@
     --popover-foreground: lab(97.68% -.0000298023 .0000119209);
     --primary: lab(49.2561% 53.4875 -83.3985);
     --primary-foreground: lab(97.68% -.0000298023 .0000119209);
-    --secondary: lab(49.8232% -66.8066 -27.3152);
+    --secondary: lab(49.8232% -66.8067 -27.3152);
     --secondary-foreground: lab(97.68% -.0000298023 .0000119209);
     --muted: lab(7.22637% -.0000149012 0);
     --muted-foreground: lab(53.6% 0 0);
@@ -8964,7 +8964,7 @@
     --ring: lab(49.2561% 53.4875 -83.3985);
     --chart-1: lab(49.2561% 53.4875 -83.3985);
     --chart-2: lab(62.2132% -87.0802 -16.2428);
-    --chart-3: lab(49.8232% -66.8066 -27.3152);
+    --chart-3: lab(49.8232% -66.8067 -27.3152);
     --chart-4: lab(49.2561% 53.4875 -83.3985);
     --chart-5: lab(62.2132% -87.0802 -16.2428);
     --sidebar: lab(.903296% 0 0);
